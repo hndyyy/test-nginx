@@ -5,8 +5,7 @@ metadata:
   namespace: nginx
   annotations:
     argocd-image-updater.argoproj.io/image-list: myapp=docker.io/hndy/mickrok8s
-    argocd-image-updater.argoproj.io/myapp.update-strategy: test-nginx
-
+    argocd-image-updater.argoproj.io/myapp.update-strategy: latest
 spec:
   replicas: 2
   hostname: root

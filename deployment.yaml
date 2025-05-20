@@ -14,7 +14,9 @@ spec:
       labels:
         app: nginx
       annotations:
-        redeploy-timestamp: "{{ now | date('2006-01-02T15:04:05Z07:00') }}"
+        argocd-image-updater.argoproj.io/image-list: myapp=docker.io/hndy/microk8s
+        argocd-image-updater.argoproj.io/myapp.update-strategy: test-nginx
+
     spec:
       containers:
         - name: nginx

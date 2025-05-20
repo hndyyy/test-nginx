@@ -11,8 +11,6 @@ spec:
       app: nginx
   template:
     metadata:
-      annotations:
-        kubectl.kubernetes.io/restartedAt: "2025-05-19T15:00:00Z"
       labels:
         app: nginx
     spec:

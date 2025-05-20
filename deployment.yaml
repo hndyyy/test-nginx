@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: hndy/microk8s:nginx
+          image: hndy/microk8s:nginx-test
           imagePullPolicy: Always
           ports:
             - containerPort: 80

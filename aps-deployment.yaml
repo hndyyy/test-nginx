@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ci3
+  namespace: ci3
+spec:
+  replicas: 2
+  hostname: root
+  selector:
+    matchLabels:
+      app: ci3
+  template:
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/restartedAt: "2025-05-19T15:00:00Z"
+      labels:
+        app: ci3
+    spec:
+      containers:
+        - name: aps-rejanglebong
+          image: hndy/microk8s:aps-new
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
+          env:
+            - name: DB_HOST
+              value: mysql
+            - name: DB_PORT
+              value: "3306"
+            - name: DB_DATABASE
+              value: apsdatabase
+            - name: DB_PASSWORD
+              value: root

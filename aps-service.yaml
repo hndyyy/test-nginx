@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ci3
+  namespace: ci3
+spec:
+  selector:
+    app: ci3
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 31222
+  type: LoadBalancer

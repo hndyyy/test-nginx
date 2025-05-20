@@ -13,6 +13,8 @@ spec:
     metadata:
       labels:
         app: nginx
+      annotations:
+        redeploy-timestamp: "{{ now | date('2006-01-02T15:04:05Z07:00') }}"
     spec:
       containers:
         - name: nginx

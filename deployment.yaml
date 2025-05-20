@@ -3,6 +3,10 @@ kind: Deployment
 metadata:
   name: nginx
   namespace: nginx
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: myapp=ghcr.io/myorg/myapp
+    argocd-image-updater.argoproj.io/myapp.update-strategy: semver
+
 spec:
   replicas: 2
   hostname: root
@@ -13,9 +17,6 @@ spec:
     metadata:
       labels:
         app: nginx
-      annotations:
-        argocd-image-updater.argoproj.io/image-list: myapp=docker.io/hndy/microk8s
-        argocd-image-updater.argoproj.io/myapp.update-strategy: test-nginx
 
     spec:
       containers:

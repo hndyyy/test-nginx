@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ci3
-  namespace: ci3
+  name: nginx
+  namespace: nginx
 spec:
   replicas: 2
   hostname: root
   selector:
     matchLabels:
-      app: ci3
+      app: nginx
   template:
     metadata:
       annotations:
         kubectl.kubernetes.io/restartedAt: "2025-05-19T15:00:00Z"
       labels:
-        app: ci3
+        app: nginx
     spec:
       containers:
-        - name: aps-rejanglebong
-          image: hndy/microk8s:aps-new
+        - name: nginx
+          image: hndy/microk8s:nginx
           imagePullPolicy: Always
           ports:
             - containerPort: 80

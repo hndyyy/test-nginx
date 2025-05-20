@@ -1,4 +1,4 @@
 resources:
-  - aps-deployment.yaml
-  - aps-service.yaml
-  - aps-hpa.yaml
+  - deployment.yaml
+  - service.yaml
+  - hpa.yaml
